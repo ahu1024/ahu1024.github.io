@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge"/>
+    <title>Document</title>
+    <style>
+        /* A4纸规格尺寸:210mm×297mm  */
+        /*800*1226*/
+        
+        html * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+        }
+        
+        .pageList {
+            width: 840px;
+            height: auto;
+            margin: 0 auto;
+        }
+        
+        .pageList .item {
+            border: 1px solid red;
+            width: 100%;
+            height: 1200px;
+            position: relative;
+            overflow: hidden;
+            padding: 30px;
+            background-color: white;
+        }
+        
+        .pageList .item::before,
+        .pageList .item::after {
+            position: absolute;
+            content: '';
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #e7746f, #21ab9e);
+            z-index: 99;
+        }
+        
+        .pageList .item::after {
+            top: 0;
+            left: 0;
+        }
+        
+        .pageList .item::before {
+            bottom: 0;
+            right: 0;
+        }
+        
+        .chart {
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+        }
+    </style>
+
+</head>
+<body>
+<button onclick="getPDF()">点击这里将红框内容导出到 PDF报告</button>
+<img id="preview"/>
+<div class="pageList">
+    <div class="item">
+        <p>
+            - **意图**：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
+            - **主要解决**：一个对象状态改变给其他对象通知的问题，而且要考虑到易用和低耦合，保证高度的协作。
+            - **何时使用**：一个对象（目标对象）的状态发生改变，所有的依赖对象（观察者对象）都将得到通知，进行广播通知。
+            - **如何解决**：使用面向对象技术，可以将这种依赖关系弱化。
+            - **关键代码**：在抽象类里有一个 ArrayList 存放观察者们。
+            - **应用实例**： 1、拍卖的时候，拍卖师观察最高标价，然后通知给其他竞价者竞价。
+            2、西游记里面悟空请求菩萨降服红孩儿，菩萨洒了一地水招来一个老乌龟，这个乌龟就是观察者，他观察菩萨洒水这个动作。
+            - **优点**： 1、观察者和被观察者是抽象耦合的。 2、建立一套触发机制。
+            - **缺点**： 1、如果一个被观察者对象有很多的直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。
+            2、如果在观察者和观察目标之间有循环依赖的话，观察目标会触发它们之间进行循环调用，可能导致系统崩溃。
+            3、观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道观察目标发生了变化。
+        </p>
+        <div id="chart"
+             class="chart"></div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jspdf/1.5.3/jspdf.min.js"></script>
+<script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+<script>
+    /*! dom-to-image-more 21-05-2019 */
+    !function (e) {
+        "use strict";
+        var s = function () {
+                return {
+                    escape: function (e) {return e.replace(/([.*+?^${}()|\[\]\/\\])/g, "\\$1");},
+                    parseExtension: n,
+                    mimeType: function (e) {
+                        var t = n(e).toLowerCase();
+                        return function () {
+                            var e = "application/font-woff", t = "image/jpeg";
+                            return {
+                                woff: e,
+                                woff2: e,
+                                ttf: "application/font-truetype",
+                                eot: "application/vnd.ms-fontobject",
+                                png: "image/png",
+                                jpg: t,
+                                jpeg: t,
+                                gif: "image/gif",
+                                tiff: "image/tiff",
+                                svg: "image/svg+xml"
+                            };
+                        }()[ t ] || "";
+                    },
+                    dataAsUrl: function (e, t) {return "data:" + t + ";base64," + e;},
+                    isDataUrl: function (e) {return -1 !== e.search(/^(data:)/);},
+                    canvasToBlob: function (t) {
+                        return t.toBlob ? new Promise(function (e) {t.toBlob(e);}) : function (i) {
+                            return new Promise(function (e) {
+                                for (var t = window.atob(i.toDataURL().split(",")[ 1 ]), n = t.length, r = new Uint8Array(n), o = 0; o < n; o++) r[ o ] = t.charCodeAt(o);
+                                e(new Blob([ r ], { type: "image/png" }));
+                            });
+                        }(t);
+                    },
+                    resolveUrl: function (e, t) {
+                        var n = document.implementation.createHTMLDocument(),
+                            r = n.createElement("base");
+                        n.head.appendChild(r);
+                        var o = n.createElement("a");
+                        return n.body.appendChild(o), r.href = t, o.href = e, o.href;
+                    },
+                    getAndEncode: function (i) {
+                        u.impl.options.cacheBust && ( i += ( /\?/.test(i) ? "&" : "?" ) + ( new Date ).getTime() );
+                        return new Promise(function (n) {
+                            var e, r = new XMLHttpRequest;
+                            if (r.onreadystatechange = function () {
+                                if (4 !== r.readyState) return;
+                                if (200 !== r.status) return void ( e ? n(e) : o("cannot fetch resource: " + i + ", status: " + r.status) );
+                                var t = new FileReader;
+                                t.onloadend = function () {
+                                    var e = t.result.split(/,/)[ 1 ];
+                                    n(e);
+                                }, t.readAsDataURL(r.response);
+                            }, r.ontimeout = function () {e ? n(e) : o("timeout of 30000ms occured while fetching resource: " + i);}, r.responseType = "blob", r.timeout = 3e4, u.impl.options.useCredentials && ( r.withCredentials = !0 ), r.open("GET", i, !0), r.send(), u.impl.options.imagePlaceholder) {
+                                var t = u.impl.options.imagePlaceholder.split(/,/);
+                                t && t[ 1 ] && ( e = t[ 1 ] );
+                            }
+
+                            function o(e) {console.error(e), n("");}
+                        });
+                    },
+                    uid: function () {
+                        var e = 0;
+                        return function () {return "u" + ( "0000" + ( Math.random() * Math.pow(36, 4) << 0 ).toString(36) ).slice(-4) + e++;};
+                    }(),
+                    delay: function (n) {return function (t) {return new Promise(function (e) {setTimeout(function () {e(t);}, n);});};},
+                    asArray: function (e) {
+                        for (var t = [], n = e.length, r = 0; r < n; r++) t.push(e[ r ]);
+                        return t;
+                    },
+                    escapeXhtml: function (e) {return e.replace(/#/g, "%23").replace(/\n/g, "%0A");},
+                    makeImage: function (r) {
+                        return "data:," === r ? Promise.resolve() : new Promise(function (e, t) {
+                            var n = new Image;
+                            u.impl.options.useCredentials && ( n.crossOrigin = "use-credentials" ), n.onload = function () {e(n);}, n.onerror = t, n.src = r;
+                        });
+                    },
+                    width: function (e) {
+                        var t = r(e, "border-left-width"),
+                            n = r(e, "border-right-width");
+                        return e.scrollWidth + t + n;
+                    },
+                    height: function (e) {
+                        var t = r(e, "border-top-width"),
+                            n = r(e, "border-bottom-width");
+                        return e.scrollHeight + t + n;
+                    }
+                };
+
+                function n(e) {
+                    var t = /\.([^\.\/]*?)(\?|$)/g.exec(e);
+                    return t ? t[ 1 ] : "";
+                }
+
+                function r(e, t) {
+                    var n = window.getComputedStyle(e).getPropertyValue(t);
+                    return parseFloat(n.replace("px", ""));
+                }
+            }(), o = function () {
+                var r = /url\(['"]?([^'"]+?)['"]?\)/g;
+                return {
+                    inlineAll: function (t, r, o) {
+                        return e(t) ? Promise.resolve(t).then(n).then(function (e) {
+                            var n = Promise.resolve(t);
+                            return e.forEach(function (t) {n = n.then(function (e) {return i(e, t, r, o);});}), n;
+                        }) : Promise.resolve(t);
+                    }, shouldProcess: e, impl: { readUrls: n, inline: i }
+                };
+
+                function e(e) {return -1 !== e.search(r);}
+
+                function n(e) {
+                    for (var t, n = []; null !== ( t = r.exec(e) );) n.push(t[ 1 ]);
+                    return n.filter(function (e) {return !s.isDataUrl(e);});
+                }
+
+                function i(t, n, r, e) {return Promise.resolve(n).then(function (e) {return r ? s.resolveUrl(e, r) : e;}).then(e || s.getAndEncode).then(function (e) {return s.dataAsUrl(e, s.mimeType(n));}).then(function (e) {return t.replace(function (e) {return new RegExp("(url\\(['\"]?)(" + s.escape(e) + ")(['\"]?\\))", "g");}(n), "$1" + e + "$3");});}
+            }(), t = function () {
+                return {
+                    resolveAll: function () {return e(document).then(function (e) {return Promise.all(e.map(function (e) {return e.resolve();}));}).then(function (e) {return e.join("\n");});},
+                    impl: { readAll: e }
+                };
+
+                function e() {
+                    return Promise.resolve(s.asArray(document.styleSheets)).then(function (e) {
+                        var n = [];
+                        return e.forEach(function (t) {
+                            if (t.hasOwnProperty("cssRules")) try {
+                                s.asArray(t.cssRules || []).forEach(n.push.bind(n));
+                            } catch (e) {
+                                console.log("Error while reading CSS rules from " + t.href, e.toString());
+                            }
+                        }), n;
+                    }).then(function (e) {return e.filter(function (e) {return e.type === CSSRule.FONT_FACE_RULE;}).filter(function (e) {return o.shouldProcess(e.style.getPropertyValue("src"));});}).then(function (e) {return e.map(t);});
+
+                    function t(t) {
+                        return {
+                            resolve: function () {
+                                var e = ( t.parentStyleSheet || {} ).href;
+                                return o.inlineAll(t.cssText, e);
+                            },
+                            src: function () {return t.style.getPropertyValue("src");}
+                        };
+                    }
+                }
+            }(), n = function () {
+                return {
+                    inlineAll: function t(e) {
+                        if (!( e instanceof Element )) return Promise.resolve(e);
+                        return n(e).then(function () {return e instanceof HTMLImageElement ? r(e).inline() : Promise.all(s.asArray(e.childNodes).map(function (e) {return t(e);}));});
+
+                        function n(t) {
+                            var e = t.style.getPropertyValue("background");
+                            return e ? o.inlineAll(e).then(function (e) {t.style.setProperty("background", e, t.style.getPropertyPriority("background"));}).then(function () {return t;}) : Promise.resolve(t);
+                        }
+                    }, impl: { newImage: r }
+                };
+
+                function r(r) {return { inline: function (e) {return s.isDataUrl(r.src) ? Promise.resolve() : Promise.resolve(r.src).then(e || s.getAndEncode).then(function (e) {return s.dataAsUrl(e, s.mimeType(r.src));}).then(function (n) {return new Promise(function (e, t) {r.onload = e, r.onerror = e, r.src = n;});});} };}
+            }(),
+            r = { imagePlaceholder: void 0, cacheBust: !1, useCredentials: !1 },
+            u = {
+                toSvg: a,
+                toPng: function (e, t) {return i(e, t || {}).then(function (e) {return e.toDataURL();});},
+                toJpeg: function (e, t) {return i(e, t = t || {}).then(function (e) {return e.toDataURL("image/jpeg", t.quality || 1);});},
+                toBlob: function (e, t) {return i(e, t || {}).then(s.canvasToBlob);},
+                toPixelData: function (t, e) {return i(t, e || {}).then(function (e) {return e.getContext("2d").getImageData(0, 0, s.width(t), s.height(t)).data;});},
+                toCanvas: function (e, t) {return i(e, t || {});},
+                impl: {
+                    fontFaces: t,
+                    images: n,
+                    util: s,
+                    inliner: o,
+                    options: {}
+                }
+            };
+
+        function a(t, n) {
+            return function (e) {
+                void 0 === e.imagePlaceholder ? u.impl.options.imagePlaceholder = r.imagePlaceholder : u.impl.options.imagePlaceholder = e.imagePlaceholder;
+                void 0 === e.cacheBust ? u.impl.options.cacheBust = r.cacheBust : u.impl.options.cacheBust = e.cacheBust;
+                void 0 === e.useCredentials ? u.impl.options.useCredentials = r.useCredentials : u.impl.options.useCredentials = e.useCredentials;
+            }(n = n || {}), Promise.resolve(t).then(function (e) {
+                return function i(t, n, e) {
+                    if (!e && n && !n(t)) return Promise.resolve();
+                    return Promise.resolve(t).then(r).then(function (e) {return o(t, e, n);}).then(function (e) {return u(t, e);});
+
+                    function r(e) {return e instanceof HTMLCanvasElement ? s.makeImage(e.toDataURL()) : e.cloneNode(!1);}
+
+                    function o(e, t, n) {
+                        var r = e.childNodes;
+                        return 0 === r.length ? Promise.resolve(t) : o(t, s.asArray(r), n).then(function () {return t;});
+
+                        function o(t, e, n) {
+                            var r = Promise.resolve();
+                            return e.forEach(function (e) {r = r.then(function () {return i(e, n);}).then(function (e) {e && t.appendChild(e);});}), r;
+                        }
+                    }
+
+                    function u(a, c) {
+                        return c instanceof Element ? Promise.resolve().then(e).then(t).then(n).then(r).then(function () {return c;}) : c;
+
+                        function e() {
+                            function e(e, t) {
+                                var n, r;
+                                e.cssText ? ( t.cssText = e.cssText, t.font = e.font ) : ( n = e, r = t, s.asArray(n).forEach(function (e) {r.setProperty(e, n.getPropertyValue(e), n.getPropertyPriority(e));}) );
+                            }
+
+                            e(window.getComputedStyle(a), c.style);
+                        }
+
+                        function t() {
+                            function t(e) {
+                                var t = window.getComputedStyle(a, e),
+                                    n = t.getPropertyValue("content");
+                                if ("" !== n && "none" !== n) {
+                                    var r = s.uid(),
+                                        o = c.getAttribute("class");
+                                    o && c.setAttribute("class", o + " " + r);
+                                    var i = document.createElement("style");
+                                    i.appendChild(u(r, e, t)), c.appendChild(i);
+                                }
+
+                                function u(e, t, n) {
+                                    var r, o, i = "." + e + ":" + t,
+                                        u = n.cssText ? ( o = ( r = n ).getPropertyValue("content"), r.cssText + " content: " + o + ";" ) : a(n);
+                                    return document.createTextNode(i + "{" + u + "}");
+
+                                    function a(t) {
+                                        return s.asArray(t).map(e).join("; ") + ";";
+
+                                        function e(e) {return e + ": " + t.getPropertyValue(e) + ( t.getPropertyPriority(e) ? " !important" : "" );}
+                                    }
+                                }
+                            }
+
+                            [ ":before", ":after" ].forEach(function (e) {t(e);});
+                        }
+
+                        function n() {a instanceof HTMLTextAreaElement && ( c.innerHTML = a.value ), a instanceof HTMLInputElement && c.setAttribute("value", a.value);}
+
+                        function r() {
+                            c instanceof SVGElement && ( c.setAttribute("xmlns", "http://www.w3.org/2000/svg"), c instanceof SVGRectElement && [ "width", "height" ].forEach(function (e) {
+                                var t = c.getAttribute(e);
+                                t && c.style.setProperty(e, t);
+                            }) );
+                        }
+                    }
+                }(e, n.filter, !0);
+            }).then(c).then(l).then(function (t) {
+                n.bgcolor && ( t.style.backgroundColor = n.bgcolor );
+                n.width && ( t.style.width = n.width + "px" );
+                n.height && ( t.style.height = n.height + "px" );
+                n.style && Object.keys(n.style).forEach(function (e) {t.style[ e ] = n.style[ e ];});
+                return t;
+            }).then(function (e) {return function (e, t, n) {return Promise.resolve(e).then(function (e) {return e.setAttribute("xmlns", "http://www.w3.org/1999/xhtml"), ( new XMLSerializer ).serializeToString(e);}).then(s.escapeXhtml).then(function (e) {return "<foreignObject x=\"0\" y=\"0\" width=\"100%\" height=\"100%\">" + e + "</foreignObject>";}).then(function (e) {return "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"" + t + "\" height=\"" + n + "\">" + e + "</svg>";}).then(function (e) {return "data:image/svg+xml;charset=utf-8," + e;});}(e, n.width || s.width(t), n.height || s.height(t));});
+        }
+
+        function i(o, i) {
+            return a(o, i).then(s.makeImage).then(s.delay(100)).then(function (e) {
+                var t = "number" != typeof i.scale ? 1 : i.scale,
+                    n = function (e, t) {
+                        var n = document.createElement("canvas");
+                        if (n.width = ( i.width || s.width(e) ) * t, n.height = ( i.height || s.height(e) ) * t, i.bgcolor) {
+                            var r = n.getContext("2d");
+                            r.fillStyle = i.bgcolor, r.fillRect(0, 0, n.width, n.height);
+                        }
+                        return n;
+                    }(o, t), r = n.getContext("2d");
+                return e && ( r.scale(t, t), r.drawImage(e, 0, 0) ), n;
+            });
+        }
+
+        function c(n) {
+            return t.resolveAll().then(function (e) {
+                var t = document.createElement("style");
+                return n.appendChild(t), t.appendChild(document.createTextNode(e)), n;
+            });
+        }
+
+        function l(e) {return n.inlineAll(e).then(function () {return e;});}
+
+        "object" == typeof exports && "object" == typeof module ? module.exports = u : e.domtoimage = u;
+    }(this);
+</script>
+
+<script>
+    window.onload = function () {
+        initEcharts();
+    };
+
+    function getPDF() {
+        onePage();
+    }
+
+    function onePage() {
+        var listNode = document.querySelectorAll(".item");
+        var node = listNode[ 0 ];
+
+        domtoimage
+            .toCanvas(node, { quality: 1, scale: 2 })
+            .then(function (canvas) {
+                onePDF(canvas);
+            })
+            .catch(function (error) {
+                console.error("oops, something went wrong!", error);
+            });
+
+    }
+
+    function onePDF(item) {
+        var doc = new jsPDF("p", "px", "a4");
+        var docH = doc.internal.pageSize.height; // 631.4175
+        var docW = doc.internal.pageSize.width; // 446.46
+        console.log(docH, docW);
+        doc.addImage(item, "png", 0, 0, docW, docH);
+        doc.save("a4.pdf");
+    }
+
+    function initEcharts() {
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: "ECharts 入门示例"
+            },
+            tooltip: {},
+            legend: {
+                data: [ "销量" ]
+            },
+            xAxis: {
+                data: [ "衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子" ]
+            },
+            yAxis: {},
+            series: [
+                {
+                    name: "销量",
+                    type: "bar",
+                    data: [ 5, 20, 36, 10, 10, 20 ]
+                }
+            ]
+        };
+        var myChart = echarts.init(document.getElementById("chart"));
+        myChart.setOption(option);
+    }
+</script>
+</body>
+</html>

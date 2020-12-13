@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <title>抽奖</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div class="luck">
+                <div class="header" :class="{ wait: isWait }" @click="show_setting = !show_setting">{{ title }}</div>
+                <div class="setting" :class="{ active: show_setting }">
+                    <div><span>标题: </span> <input type="text" v-model="title" /></div>
+                    <div>
+                        <span>抽奖池:</span>
+                        <textarea v-model="allUserString" rows="10" cols="30">
+                    我是一个文本框。
+                    </textarea
+                        >
+                        <pre>{{ allUser.length }}</pre>
+                    </div>
+                    <div>
+                        <span>每次抽奖个数: </span>
+                        <input v-model="size" type="range" name="points" min="1" max="100" />
+                        <pre>{{ size }}</pre>
+                    </div>
+                    <span class="close" :class="{ active: show_setting }" @click="show_setting = !show_setting">关闭</span>
+                </div>
+                <div class="start" @click="start">{{ loading ? "停止" : `开始第 ${round} 轮抽奖` }}</div>
+                <div class="rollup" :class="{ active: !loading, wait: isWait }" :style="rollupStyle">
+                    <span v-show="i < size" v-for="(name, i) in allUser" :key="i + name">{{ name }}</span>
+                </div>
+                <div class="result" :class="{ active: show_result }">
+                    <div class="btn" @click="show_result = !show_result">
+                        {{ show_result ? "点击关闭" : `记录(奖池剩余${ less })` }}
+                    </div>
+
+                    <p v-for="(item, i) in result" :key="i">第 {{ item.round }} 轮中奖者 {{ item.user.length }} 位：{{ item.user.join() }}</p>
+                </div>
+            </div>
+        </div>
+        <script src="./lodash.min.js"></script>
+        <script src="./mock-min.js"></script>
+        <script src="./less.min.js"></script>
+        <script src="./vue.min.js"></script>
+        <script src="./index.js"></script>
+    </body>
+</html>

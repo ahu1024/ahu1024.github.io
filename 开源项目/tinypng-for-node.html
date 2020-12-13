@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>自动化批处理压缩图片 | 烈虎</title>
+    <meta name="description" content="自信，坚持，求真">
+    <link rel="icon" href="/assets/img/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?11ee3eaf406620d405bb85e0f32425c7";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <link rel="preload" href="/assets/css/0.styles.82bea2fa.css" as="style"><link rel="preload" href="/assets/js/app.8d5fe67d.js" as="script"><link rel="preload" href="/assets/js/2.fa29e96b.js" as="script"><link rel="preload" href="/assets/js/38.7462c38d.js" as="script"><link rel="prefetch" href="/assets/js/10.3f5193d4.js"><link rel="prefetch" href="/assets/js/11.d37f35cb.js"><link rel="prefetch" href="/assets/js/12.7a21fa47.js"><link rel="prefetch" href="/assets/js/13.fb4f3c39.js"><link rel="prefetch" href="/assets/js/14.dc586c5a.js"><link rel="prefetch" href="/assets/js/15.d2857a72.js"><link rel="prefetch" href="/assets/js/16.c8b0e7e1.js"><link rel="prefetch" href="/assets/js/17.49796df2.js"><link rel="prefetch" href="/assets/js/18.57461098.js"><link rel="prefetch" href="/assets/js/19.93b5cb6e.js"><link rel="prefetch" href="/assets/js/20.345f3e56.js"><link rel="prefetch" href="/assets/js/21.92acd393.js"><link rel="prefetch" href="/assets/js/22.448078ce.js"><link rel="prefetch" href="/assets/js/23.5e57af3f.js"><link rel="prefetch" href="/assets/js/24.e93af5c9.js"><link rel="prefetch" href="/assets/js/25.e1e8b241.js"><link rel="prefetch" href="/assets/js/26.c63d5a00.js"><link rel="prefetch" href="/assets/js/27.dff7a2b5.js"><link rel="prefetch" href="/assets/js/28.ac36eaf8.js"><link rel="prefetch" href="/assets/js/29.0aaa35f6.js"><link rel="prefetch" href="/assets/js/3.77c1e61e.js"><link rel="prefetch" href="/assets/js/30.90c3e858.js"><link rel="prefetch" href="/assets/js/31.bd15adb1.js"><link rel="prefetch" href="/assets/js/32.58cd3c0d.js"><link rel="prefetch" href="/assets/js/33.62a454f2.js"><link rel="prefetch" href="/assets/js/34.f77b6d52.js"><link rel="prefetch" href="/assets/js/35.57cc5706.js"><link rel="prefetch" href="/assets/js/36.b0b42ee8.js"><link rel="prefetch" href="/assets/js/37.02424497.js"><link rel="prefetch" href="/assets/js/39.682c7d42.js"><link rel="prefetch" href="/assets/js/4.35918f97.js"><link rel="prefetch" href="/assets/js/40.d8d0ed41.js"><link rel="prefetch" href="/assets/js/41.c53fd9b3.js"><link rel="prefetch" href="/assets/js/42.9cb632e9.js"><link rel="prefetch" href="/assets/js/43.f864c2f0.js"><link rel="prefetch" href="/assets/js/44.3e007571.js"><link rel="prefetch" href="/assets/js/45.7a30699a.js"><link rel="prefetch" href="/assets/js/46.d0d3be1d.js"><link rel="prefetch" href="/assets/js/47.97f6235b.js"><link rel="prefetch" href="/assets/js/48.644929be.js"><link rel="prefetch" href="/assets/js/49.bfbbce0b.js"><link rel="prefetch" href="/assets/js/5.7c7b758c.js"><link rel="prefetch" href="/assets/js/50.092d2a3c.js"><link rel="prefetch" href="/assets/js/51.10f85bec.js"><link rel="prefetch" href="/assets/js/52.a5e5d498.js"><link rel="prefetch" href="/assets/js/53.f6b4c9c8.js"><link rel="prefetch" href="/assets/js/54.c2f4ade9.js"><link rel="prefetch" href="/assets/js/55.5b4cc45a.js"><link rel="prefetch" href="/assets/js/56.dddf1719.js"><link rel="prefetch" href="/assets/js/57.d770a29a.js"><link rel="prefetch" href="/assets/js/58.1858662a.js"><link rel="prefetch" href="/assets/js/59.5706d886.js"><link rel="prefetch" href="/assets/js/6.382112b0.js"><link rel="prefetch" href="/assets/js/60.ea659059.js"><link rel="prefetch" href="/assets/js/7.a0feba21.js"><link rel="prefetch" href="/assets/js/8.4ac9dba2.js"><link rel="prefetch" href="/assets/js/9.1af4d098.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.82bea2fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">烈虎</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://segmentfault.com/u/peichenhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的思否
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/Guide.html" class="nav-link">日积月累</a></div><div class="nav-item"><a href="https://github.com/pch1024" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://segmentfault.com/u/peichenhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的思否
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/Guide.html" class="nav-link">日积月累</a></div><div class="nav-item"><a href="https://github.com/pch1024" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Guide.html" class="sidebar-link">Hello World</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>开源项目</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/开源项目/dom-to-pdf.html" class="sidebar-link">HTML 导出 PDF</a></li><li><a href="/开源项目/echarts-in-react.html" class="sidebar-link">一个用于 React 项目的 Echarts 组件</a></li><li><a href="/开源项目/fix-image-orientation.html" class="sidebar-link">数码照片方向参数修正</a></li><li><a href="/开源项目/tinypng-for-node.html" class="active sidebar-link">自动化批处理压缩图片</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/开源项目/tinypng-for-node.html#这是个什么东东？" class="sidebar-link">这是个什么东东？</a></li><li class="sidebar-sub-header"><a href="/开源项目/tinypng-for-node.html#网页版-tinypng-缺点" class="sidebar-link">网页版 tinypng 缺点</a></li><li class="sidebar-sub-header"><a href="/开源项目/tinypng-for-node.html#如何使用-node-实现自动化批处理压缩？" class="sidebar-link">如何使用 node 实现自动化批处理压缩？</a></li><li class="sidebar-sub-header"><a href="/开源项目/tinypng-for-node.html#自动化脚本" class="sidebar-link">自动化脚本</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>原创文章</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法研究</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/个人简历.html" class="sidebar-link">个人简历</a></li><li><a href="/项目案例/项目案例.html" class="sidebar-link">项目案例</a></li><li><a href="/Optimization.html" class="sidebar-link">网站优化</a></li><li><a href="/WXAPP.html" class="sidebar-link">微信小程序</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="自动化批处理压缩图片"><a href="#自动化批处理压缩图片" aria-hidden="true" class="header-anchor">#</a> 自动化批处理压缩图片</h1> <h2 id="这是个什么东东？"><a href="#这是个什么东东？" aria-hidden="true" class="header-anchor">#</a> 这是个什么东东？</h2> <p>我一直比较喜欢使用 <a href="https://tinypng.com/" target="_blank" rel="noopener noreferrer">tinypng<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 压缩图片，但是免费版的存在很多限制，并且要用手拖来拖去，累🐵。</p> <h2 id="网页版-tinypng-缺点"><a href="#网页版-tinypng-缺点" aria-hidden="true" class="header-anchor">#</a> 网页版 <a href="https://tinypng.com/" target="_blank" rel="noopener noreferrer">tinypng<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 缺点</h2> <ul><li>一次最多压缩20个图</li> <li>一个图最大不能超过 5MB</li> <li>要用手拖来拖去</li></ul> <h2 id="如何使用-node-实现自动化批处理压缩？"><a href="#如何使用-node-实现自动化批处理压缩？" aria-hidden="true" class="header-anchor">#</a> 如何使用 node 实现自动化批处理压缩？</h2> <ul><li>递归获取本地文件夹里的文件</li> <li>过滤文件，后缀名格式必须是 <code>.jpg</code>、 <code>.png</code>、<code>大小小于5MB</code>.(文件体积大小限制绕不过去 - -、)</li> <li>封装 tinypng API ，伪装请求为浏览器请求</li> <li>每次异步处理一个文件（批处理，一个一个也很快，可以绕过20个的数量限制）</li> <li>处理返回数据，拿到 tinypng 压缩好的图片地址</li> <li>取回远程图片，在图片原目录生成新图片，命名格式为：<code>原名称.min.原格式</code></li> <li>纯node实现，短小精悍，不依赖任何其他代码片段</li> <li>将脚本放入本地文件夹，直接执行</li></ul> <h2 id="自动化脚本"><a href="#自动化脚本" aria-hidden="true" class="header-anchor">#</a> 自动化脚本</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> https <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'https'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> crypto <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'crypto'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token constant">URL</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'url'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 图片存放文件夹</span>
+<span class="token keyword">const</span> root <span class="token operator">=</span> <span class="token string">'./'</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> exts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'.jpg'</span><span class="token punctuation">,</span> <span class="token string">'.png'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> max <span class="token operator">=</span> <span class="token number">5200000</span><span class="token punctuation">;</span> <span class="token comment">// 5MB == 5242848.754299136</span>
+
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+  method<span class="token punctuation">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+  hostname<span class="token punctuation">:</span> <span class="token string">'tinypng.com'</span><span class="token punctuation">,</span>
+  path<span class="token punctuation">:</span> <span class="token string">'/web/shrink'</span><span class="token punctuation">,</span>
+  headers<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rejectUnauthorized<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token string">'Postman-Token'</span><span class="token punctuation">:</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'Cache-Control'</span><span class="token punctuation">:</span> <span class="token string">'no-cache'</span><span class="token punctuation">,</span>
+    <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/x-www-form-urlencoded'</span><span class="token punctuation">,</span>
+    <span class="token string">'User-Agent'</span><span class="token punctuation">:</span>
+      <span class="token string">'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function">fileList</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 获取文件列表</span>
+<span class="token keyword">function</span> <span class="token function">fileList</span><span class="token punctuation">(</span><span class="token parameter">folder</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  fs<span class="token punctuation">.</span><span class="token function">readdir</span><span class="token punctuation">(</span>folder<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> files</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    files<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">file</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token function">fileFilter</span><span class="token punctuation">(</span>folder <span class="token operator">+</span> file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 过滤文件格式，返回所有jpg,png图片</span>
+<span class="token keyword">function</span> <span class="token function">fileFilter</span><span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  fs<span class="token punctuation">.</span><span class="token function">stat</span><span class="token punctuation">(</span>file<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> stats</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      
+    <span class="token comment">// 未知错误</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">return</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// 如果是文件</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>
+      <span class="token comment">// 必须是文件，小于5MB，后缀 jpg||png</span>
+      stats<span class="token punctuation">.</span>size <span class="token operator">&lt;=</span> max <span class="token operator">&amp;&amp;</span>
+      stats<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
+      exts<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">extname</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 找到一个需要压缩的图片</span>
+      <span class="token function">fileUpload</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+      <span class="token comment">// console.log('可以压缩：' + file);</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">// 如果是文件夹</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>stats<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token function">fileList</span><span class="token punctuation">(</span>file <span class="token operator">+</span> <span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 异步API,压缩图片</span>
+
+<span class="token comment">/*
+
+ // 失败返回值
+ {&quot;error&quot;:&quot;Bad request&quot;,&quot;message&quot;:&quot;Request is invalid&quot;}
+ 
+ // 成功返回值
+ {
+    &quot;input&quot;:  { &quot;size&quot;: 887, &quot;type&quot;: &quot;image/png&quot; },
+    &quot;output&quot;: { 
+          &quot;size&quot;: 785,
+          &quot;type&quot;: &quot;image/png&quot;, 
+          &quot;width&quot;: 81, 
+          &quot;height&quot;: 81,
+          &quot;ratio&quot;: 0.885, 
+          &quot;url&quot;: &quot;https://tinypng.com/web/output/7aztz90nq5p9545zch8gjzqg5ubdatd6&quot; 
+     }
+ }
+*/</span>
+
+<span class="token keyword">function</span> <span class="token function">fileUpload</span><span class="token punctuation">(</span><span class="token parameter">img</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 创建请求</span>
+  <span class="token keyword">var</span> req <span class="token operator">=</span> https<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token parameter">buf</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>buf<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>error<span class="token punctuation">)</span>  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">[</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>img<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">]：压缩失败！报错：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>obj<span class="token punctuation">.</span>message<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">else</span>  <span class="token function">fileUpdate</span><span class="token punctuation">(</span>img<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 执行请求（省略重命名，直接覆盖）</span>
+  req<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'binary'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 发生错误</span>
+  req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span>  console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 断开请求</span>
+  req<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 该方法被循环调用,请求图片数据</span>
+<span class="token keyword">function</span> <span class="token function">fileUpdate</span><span class="token punctuation">(</span><span class="token parameter">imgpath<span class="token punctuation">,</span> obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+  <span class="token keyword">let</span> options <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>output<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">let</span> req <span class="token operator">=</span> https<span class="token punctuation">.</span><span class="token function">request</span><span class="token punctuation">(</span>options<span class="token punctuation">,</span> <span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      
+    <span class="token keyword">let</span> body <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    
+    res<span class="token punctuation">.</span><span class="token function">setEncoding</span><span class="token punctuation">(</span><span class="token string">'binary'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    res<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      body <span class="token operator">+=</span> data<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    res<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        
+      fs<span class="token punctuation">.</span><span class="token function">writeFile</span><span class="token punctuation">(</span>imgpath<span class="token punctuation">,</span> body<span class="token punctuation">,</span> <span class="token string">'binary'</span><span class="token punctuation">,</span> <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">return</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>
+          <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">[</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>imgpath<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">] \n 压缩成功，原始大小-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>obj<span class="token punctuation">.</span>input<span class="token punctuation">.</span>size<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">，压缩大小-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>
+            obj<span class="token punctuation">.</span>output<span class="token punctuation">.</span>size
+          <span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">，优化比例-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>obj<span class="token punctuation">.</span>output<span class="token punctuation">.</span>ratio<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  req<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/开源项目/fix-image-orientation.html" class="prev">数码照片方向参数修正</a></span> <span class="next"><a href="/原创文章/JS-new操作构造函数深度解析.html">JS-new操作构造函数深度解析</a>→
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8d5fe67d.js" defer></script><script src="/assets/js/2.fa29e96b.js" defer></script><script src="/assets/js/38.7462c38d.js" defer></script>
+  </body>
+</html>

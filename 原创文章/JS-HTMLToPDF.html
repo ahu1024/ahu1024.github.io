@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS-HTMLToPDF | 烈虎</title>
+    <meta name="description" content="自信，坚持，求真">
+    <link rel="icon" href="/assets/img/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?11ee3eaf406620d405bb85e0f32425c7";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <link rel="preload" href="/assets/css/0.styles.82bea2fa.css" as="style"><link rel="preload" href="/assets/js/app.8d5fe67d.js" as="script"><link rel="preload" href="/assets/js/2.fa29e96b.js" as="script"><link rel="preload" href="/assets/js/25.e1e8b241.js" as="script"><link rel="prefetch" href="/assets/js/10.3f5193d4.js"><link rel="prefetch" href="/assets/js/11.d37f35cb.js"><link rel="prefetch" href="/assets/js/12.7a21fa47.js"><link rel="prefetch" href="/assets/js/13.fb4f3c39.js"><link rel="prefetch" href="/assets/js/14.dc586c5a.js"><link rel="prefetch" href="/assets/js/15.d2857a72.js"><link rel="prefetch" href="/assets/js/16.c8b0e7e1.js"><link rel="prefetch" href="/assets/js/17.49796df2.js"><link rel="prefetch" href="/assets/js/18.57461098.js"><link rel="prefetch" href="/assets/js/19.93b5cb6e.js"><link rel="prefetch" href="/assets/js/20.345f3e56.js"><link rel="prefetch" href="/assets/js/21.92acd393.js"><link rel="prefetch" href="/assets/js/22.448078ce.js"><link rel="prefetch" href="/assets/js/23.5e57af3f.js"><link rel="prefetch" href="/assets/js/24.e93af5c9.js"><link rel="prefetch" href="/assets/js/26.c63d5a00.js"><link rel="prefetch" href="/assets/js/27.dff7a2b5.js"><link rel="prefetch" href="/assets/js/28.ac36eaf8.js"><link rel="prefetch" href="/assets/js/29.0aaa35f6.js"><link rel="prefetch" href="/assets/js/3.77c1e61e.js"><link rel="prefetch" href="/assets/js/30.90c3e858.js"><link rel="prefetch" href="/assets/js/31.bd15adb1.js"><link rel="prefetch" href="/assets/js/32.58cd3c0d.js"><link rel="prefetch" href="/assets/js/33.62a454f2.js"><link rel="prefetch" href="/assets/js/34.f77b6d52.js"><link rel="prefetch" href="/assets/js/35.57cc5706.js"><link rel="prefetch" href="/assets/js/36.b0b42ee8.js"><link rel="prefetch" href="/assets/js/37.02424497.js"><link rel="prefetch" href="/assets/js/38.7462c38d.js"><link rel="prefetch" href="/assets/js/39.682c7d42.js"><link rel="prefetch" href="/assets/js/4.35918f97.js"><link rel="prefetch" href="/assets/js/40.d8d0ed41.js"><link rel="prefetch" href="/assets/js/41.c53fd9b3.js"><link rel="prefetch" href="/assets/js/42.9cb632e9.js"><link rel="prefetch" href="/assets/js/43.f864c2f0.js"><link rel="prefetch" href="/assets/js/44.3e007571.js"><link rel="prefetch" href="/assets/js/45.7a30699a.js"><link rel="prefetch" href="/assets/js/46.d0d3be1d.js"><link rel="prefetch" href="/assets/js/47.97f6235b.js"><link rel="prefetch" href="/assets/js/48.644929be.js"><link rel="prefetch" href="/assets/js/49.bfbbce0b.js"><link rel="prefetch" href="/assets/js/5.7c7b758c.js"><link rel="prefetch" href="/assets/js/50.092d2a3c.js"><link rel="prefetch" href="/assets/js/51.10f85bec.js"><link rel="prefetch" href="/assets/js/52.a5e5d498.js"><link rel="prefetch" href="/assets/js/53.f6b4c9c8.js"><link rel="prefetch" href="/assets/js/54.c2f4ade9.js"><link rel="prefetch" href="/assets/js/55.5b4cc45a.js"><link rel="prefetch" href="/assets/js/56.dddf1719.js"><link rel="prefetch" href="/assets/js/57.d770a29a.js"><link rel="prefetch" href="/assets/js/58.1858662a.js"><link rel="prefetch" href="/assets/js/59.5706d886.js"><link rel="prefetch" href="/assets/js/6.382112b0.js"><link rel="prefetch" href="/assets/js/60.ea659059.js"><link rel="prefetch" href="/assets/js/7.a0feba21.js"><link rel="prefetch" href="/assets/js/8.4ac9dba2.js"><link rel="prefetch" href="/assets/js/9.1af4d098.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.82bea2fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">烈虎</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://segmentfault.com/u/peichenhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的思否
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/Guide.html" class="nav-link">日积月累</a></div><div class="nav-item"><a href="https://github.com/pch1024" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://segmentfault.com/u/peichenhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的思否
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/Guide.html" class="nav-link">日积月累</a></div><div class="nav-item"><a href="https://github.com/pch1024" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Guide.html" class="sidebar-link">Hello World</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开源项目</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>原创文章</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/原创文章/JS-new操作构造函数深度解析.html" class="sidebar-link">JS-new操作构造函数深度解析</a></li><li><a href="/原创文章/JS-this.html" class="sidebar-link">JS-this、call、apply和bind</a></li><li><a href="/原创文章/JS-闭包.html" class="sidebar-link">JS-闭包</a></li><li><a href="/原创文章/JS-数码照片旋转角度修复.html" class="sidebar-link">JS-数码照片旋转角度修复</a></li><li><a href="/原创文章/JS-HTMLToPDF.html" class="active sidebar-link">JS-HTMLToPDF</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/原创文章/JS-HTMLToPDF.html#案例讲解" class="sidebar-link">案例讲解</a></li><li class="sidebar-sub-header"><a href="/原创文章/JS-HTMLToPDF.html#css样式约定" class="sidebar-link">CSS样式约定</a></li><li class="sidebar-sub-header"><a href="/原创文章/JS-HTMLToPDF.html#js-功能设计" class="sidebar-link">JS 功能设计</a></li><li class="sidebar-sub-header"><a href="/原创文章/JS-HTMLToPDF.html#特别提醒" class="sidebar-link">特别提醒</a></li></ul></li><li><a href="/原创文章/JS-费波纳茨数列.html" class="sidebar-link">JS-费波纳茨数列</a></li><li><a href="/原创文章/JS-有趣的数组.html" class="sidebar-link">JS-有趣的数组</a></li><li><a href="/原创文章/Vue-路由History模式配置.html" class="sidebar-link">Vue-路由History模式配置</a></li><li><a href="/原创文章/学习笔记-ES6.html" class="sidebar-link">学习笔记-ES6</a></li><li><a href="/原创文章/学习笔记-阿里云ECS容器服务配置.html" class="sidebar-link">学习笔记-阿里云ECS容器服务配置</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法研究</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/个人简历.html" class="sidebar-link">个人简历</a></li><li><a href="/项目案例/项目案例.html" class="sidebar-link">项目案例</a></li><li><a href="/Optimization.html" class="sidebar-link">网站优化</a></li><li><a href="/WXAPP.html" class="sidebar-link">微信小程序</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="js-htmltopdf"><a href="#js-htmltopdf" aria-hidden="true" class="header-anchor">#</a> JS-HTMLToPDF</h1> <p>前端开发中遇到的将网页导出为PDF文件的方式有三种：</p> <ol><li>直接鼠标右键选择打印功能，这样导出的pdf其实会产生错乱的版面，效果最差。</li> <li>通过将HTML网页先生成图片，再将图片生成PDF,对客户设备有一定要求。</li> <li>通过后端服务器将HTML页面生成PDF，前端只需要下载文件。</li></ol> <p>下面主要介绍第二种。</p> <h1 id="关键类库"><a href="#关键类库" aria-hidden="true" class="header-anchor">#</a> 关键类库</h1> <ul><li>HTML生成图片：html2canvas, dom-to-image</li> <li>图片生成PDF：jspdf</li></ul> <p>经过我个人使用发现dom-to-image 生成的图片比html2canvas 的清晰度要好一些。</p> <h2 id="案例讲解"><a href="#案例讲解" aria-hidden="true" class="header-anchor">#</a> 案例讲解</h2> <p>A4纸张大小一般为210mm * 297mm,比例为 1：√2
+为了更好的阅读体验，我们提前将每一个页面都独立制作，从而避免有页面太高生成PDF时发生字体截断现象。</p> <p>我们可以设置每一页大小为 840px * 1188px。
+如果需要PDF封面等其他子页面，推荐提前生成图片，再合并网页生成的图片</p> <div class="language-html extra-class"><pre class="language-html"><code>    <span class="token comment">&lt;!--    按钮：点击在线生成PDF--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>getPDF()<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>ToPDF<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+    <span class="token comment">&lt;!--    页面列表--&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>pageList<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>p1 page<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--        文本--&gt;</span>
+        <span class="token comment">&lt;!--        视频--&gt;</span>
+        <span class="token comment">&lt;!--        Canvas--&gt;</span>
+        <span class="token comment">&lt;!-- 测试注释信息是否影响该 item dom to image，结论：是，存在注释时生成截图失败 --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>p2 page<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--        文本--&gt;</span>
+        <span class="token comment">&lt;!--        视频--&gt;</span>
+        <span class="token comment">&lt;!--        Canvas--&gt;</span>
+        <span class="token comment">&lt;!-- 测试注释信息是否影响该 item dom to image，结论：是，存在注释时生成截图失败 --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>p3 page<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token comment">&lt;!--        文本--&gt;</span>
+        <span class="token comment">&lt;!--        视频--&gt;</span>
+        <span class="token comment">&lt;!--        Canvas--&gt;</span>
+        <span class="token comment">&lt;!-- 测试注释信息是否影响该 item dom to image，结论：是，存在注释时生成截图失败 --&gt;</span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="css样式约定"><a href="#css样式约定" aria-hidden="true" class="header-anchor">#</a> CSS样式约定</h2> <p>每一个 Page DIV 宽高比等于A4纸张宽高比例，除了封面，每一页都含有Echats图表</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">html*</span> <span class="token punctuation">{</span>
+  <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.pageList</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 840px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #fafafa<span class="token punctuation">;</span>
+  <span class="token property">min-height</span><span class="token punctuation">:</span> 1188px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.pageList .page</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1142px<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> #ececec<span class="token punctuation">;</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="js-功能设计"><a href="#js-功能设计" aria-hidden="true" class="header-anchor">#</a> JS 功能设计</h2> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">// 文档加载</span>
+
+<span class="token comment">// 交互按钮，获取PDF</span>
+<span class="token keyword">function</span> <span class="token function">getPDF</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'getPDF'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'.page'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">renderImg</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 生成 DIV 截图</span>
+<span class="token keyword">function</span> <span class="token function">renderImg</span><span class="token punctuation">(</span><span class="token parameter">listNode</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> base64List <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  listNode<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    domtoimage
+      <span class="token punctuation">.</span><span class="token function">toJpeg</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> <span class="token punctuation">{</span> quality<span class="token punctuation">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">dataUrl</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        base64List<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> dataUrl<span class="token punctuation">;</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">notEmpty</span><span class="token punctuation">(</span>base64List<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> listNode<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">renderPDF</span><span class="token punctuation">(</span>base64List<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">changeShow</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'oops, something went wrong!'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 数组去空</span>
+<span class="token keyword">function</span> <span class="token function">notEmpty</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span>tmp</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    tmp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">val</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">!</span>val<span class="token punctuation">)</span> tmp<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 截图生成PDF</span>
+<span class="token keyword">function</span> <span class="token function">renderPDF</span><span class="token punctuation">(</span><span class="token parameter">list</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 这里可以插入PDF封面图片等</span>
+  
+  <span class="token comment">// PDF 宽高</span>
+  <span class="token keyword">var</span> size <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">840</span><span class="token punctuation">,</span> <span class="token number">1188</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> doc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">jsPDF</span><span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span> <span class="token string">'px'</span><span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">var</span> docH <span class="token operator">=</span> doc<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>pageSize<span class="token punctuation">.</span>height<span class="token punctuation">;</span> 
+  <span class="token keyword">var</span> docW <span class="token operator">=</span> doc<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>pageSize<span class="token punctuation">.</span>width<span class="token punctuation">;</span> 
+  
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>docW<span class="token punctuation">,</span> docH<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    doc<span class="token punctuation">.</span><span class="token function">addImage</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> <span class="token string">'jpeg'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> docW<span class="token punctuation">,</span> docH<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 设置页脚页码</span>
+    doc<span class="token punctuation">.</span><span class="token function">setTextColor</span><span class="token punctuation">(</span><span class="token string">'#003333'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    doc<span class="token punctuation">.</span><span class="token function">setFontSize</span><span class="token punctuation">(</span><span class="token number">14</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    doc<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token string">'—— Page : '</span> <span class="token operator">+</span> <span class="token punctuation">(</span>index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">' ——'</span><span class="token punctuation">,</span> <span class="token number">350</span><span class="token punctuation">,</span> <span class="token number">620</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">&lt;</span> list<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> doc<span class="token punctuation">.</span><span class="token function">addPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">===</span> list<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> doc<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token string">'A4.pdf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+</code></pre></div><h2 id="特别提醒"><a href="#特别提醒" aria-hidden="true" class="header-anchor">#</a> 特别提醒</h2> <ol><li><code>html</code> 内注释信息会阻止<code>dom-to-image.min.js</code>生成截图</li> <li>pdf内容模糊问题，可以查看html2canvas 的scale参数 和 dom-to-image-more 的 scale 参数进一步了解</li> <li>目前遇到的难题，scale 处理后 对于canvas元素的图片没有作用</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/原创文章/JS-数码照片旋转角度修复.html" class="prev">JS-数码照片旋转角度修复</a></span> <span class="next"><a href="/原创文章/JS-费波纳茨数列.html">JS-费波纳茨数列</a>→
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8d5fe67d.js" defer></script><script src="/assets/js/2.fa29e96b.js" defer></script><script src="/assets/js/25.e1e8b241.js" defer></script>
+  </body>
+</html>

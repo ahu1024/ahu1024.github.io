@@ -1,0 +1,188 @@
+
+body,
+body * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.luck {
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url(./timg.jpeg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.start {
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    line-height: 60px;
+    transform: translate(-50%, 0);
+    width: 240px;
+    height: 60px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    color: #f56b1c;
+    cursor: pointer;
+    font-size: 16px;
+    &:hover {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+.rollup {
+    transition: all 360ms;
+    filter: blur(2px);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    opacity: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    pointer-events: none;
+    > span {
+        // border: 1px solid black;
+        display: inline-block;
+        height: 30px;
+        width: 100px;
+        line-height: 30px;
+        text-align: center;
+        color: chartreuse;
+        font-size: 24px;
+    }
+    &.active {
+        filter: blur(0) contrast(0.8);
+    }
+    &.wait {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+.result {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: ～"calc(100% - 30px)";
+    left: 0;
+    text-align: center;
+    transition: all 360ms;
+    .btn {
+        color: white;
+        height: 30px;
+        line-height: 30px;
+        text-align: right;
+        padding: 0 16px;
+        width: 100%;
+        border-bottom: 1px dashed #ccc;
+        cursor: pointer;
+    }
+    &.active {
+        top: 0;
+        background: white;
+        .btn {
+            color: #ccc;
+        }
+    }
+}
+
+.setting {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 0;
+    text-align: left;
+    background: white;
+    transform: translateY(-100%);
+    transition: all 360ms;
+    z-index: 10;
+    &.active {
+        transform: translateY(0);
+    }
+    .close {
+        position: absolute;
+        height: 30px;
+        line-height: 30px;
+        top: 100%;
+        left: 50%;
+        width: 100px;
+        margin-left: -50px;
+        color: crimson;
+        text-align: center;
+        background: white;
+        border-radius: 0 0 4px 4px;
+        transform: translateY(-100%);
+        transition: all 360ms;
+        cursor: pointer;
+        &.active {
+            transform: translateY(0);
+        }
+    }
+    > div {
+        display: flex;
+        flex-flow: row nowrap;
+        font-size: 16px;
+        > * {
+            border: 1px dashed rgba(0, 0, 0, 0.2);
+        }
+        span {
+            display: inline-block;
+            padding: 16px;
+            width: 200px;
+            text-align: right;
+            line-height: 1.5;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        pre {
+            flex-grow: 0;
+            flex-shrink: 0;
+            display: inline-flex;
+            width: 80px;
+            text-align: center;
+            flex-flow: column nowrap;
+            justify-content: center;
+        }
+        input[type="text"],
+        textarea {
+            padding: 8px;
+            width: 100%;
+        }
+        input[type="range"] {
+            width: 100%;
+            border: 1px dashed rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+.header {
+    position: absolute;
+    width: 100%;
+    top: 15%;
+    left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    height: 100px;
+    line-height: 100px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    transition: all 360ms;
+    &.wait {
+        top: 50%;
+        font-size: 100px;
+        margin-top: -50px;
+    }
+}

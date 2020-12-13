@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>一个用于 React 项目的 Echarts 组件 | 烈虎</title>
+    <meta name="description" content="自信，坚持，求真">
+    <link rel="icon" href="/assets/img/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?11ee3eaf406620d405bb85e0f32425c7";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <link rel="preload" href="/assets/css/0.styles.82bea2fa.css" as="style"><link rel="preload" href="/assets/js/app.8d5fe67d.js" as="script"><link rel="preload" href="/assets/js/2.fa29e96b.js" as="script"><link rel="preload" href="/assets/js/36.b0b42ee8.js" as="script"><link rel="prefetch" href="/assets/js/10.3f5193d4.js"><link rel="prefetch" href="/assets/js/11.d37f35cb.js"><link rel="prefetch" href="/assets/js/12.7a21fa47.js"><link rel="prefetch" href="/assets/js/13.fb4f3c39.js"><link rel="prefetch" href="/assets/js/14.dc586c5a.js"><link rel="prefetch" href="/assets/js/15.d2857a72.js"><link rel="prefetch" href="/assets/js/16.c8b0e7e1.js"><link rel="prefetch" href="/assets/js/17.49796df2.js"><link rel="prefetch" href="/assets/js/18.57461098.js"><link rel="prefetch" href="/assets/js/19.93b5cb6e.js"><link rel="prefetch" href="/assets/js/20.345f3e56.js"><link rel="prefetch" href="/assets/js/21.92acd393.js"><link rel="prefetch" href="/assets/js/22.448078ce.js"><link rel="prefetch" href="/assets/js/23.5e57af3f.js"><link rel="prefetch" href="/assets/js/24.e93af5c9.js"><link rel="prefetch" href="/assets/js/25.e1e8b241.js"><link rel="prefetch" href="/assets/js/26.c63d5a00.js"><link rel="prefetch" href="/assets/js/27.dff7a2b5.js"><link rel="prefetch" href="/assets/js/28.ac36eaf8.js"><link rel="prefetch" href="/assets/js/29.0aaa35f6.js"><link rel="prefetch" href="/assets/js/3.77c1e61e.js"><link rel="prefetch" href="/assets/js/30.90c3e858.js"><link rel="prefetch" href="/assets/js/31.bd15adb1.js"><link rel="prefetch" href="/assets/js/32.58cd3c0d.js"><link rel="prefetch" href="/assets/js/33.62a454f2.js"><link rel="prefetch" href="/assets/js/34.f77b6d52.js"><link rel="prefetch" href="/assets/js/35.57cc5706.js"><link rel="prefetch" href="/assets/js/37.02424497.js"><link rel="prefetch" href="/assets/js/38.7462c38d.js"><link rel="prefetch" href="/assets/js/39.682c7d42.js"><link rel="prefetch" href="/assets/js/4.35918f97.js"><link rel="prefetch" href="/assets/js/40.d8d0ed41.js"><link rel="prefetch" href="/assets/js/41.c53fd9b3.js"><link rel="prefetch" href="/assets/js/42.9cb632e9.js"><link rel="prefetch" href="/assets/js/43.f864c2f0.js"><link rel="prefetch" href="/assets/js/44.3e007571.js"><link rel="prefetch" href="/assets/js/45.7a30699a.js"><link rel="prefetch" href="/assets/js/46.d0d3be1d.js"><link rel="prefetch" href="/assets/js/47.97f6235b.js"><link rel="prefetch" href="/assets/js/48.644929be.js"><link rel="prefetch" href="/assets/js/49.bfbbce0b.js"><link rel="prefetch" href="/assets/js/5.7c7b758c.js"><link rel="prefetch" href="/assets/js/50.092d2a3c.js"><link rel="prefetch" href="/assets/js/51.10f85bec.js"><link rel="prefetch" href="/assets/js/52.a5e5d498.js"><link rel="prefetch" href="/assets/js/53.f6b4c9c8.js"><link rel="prefetch" href="/assets/js/54.c2f4ade9.js"><link rel="prefetch" href="/assets/js/55.5b4cc45a.js"><link rel="prefetch" href="/assets/js/56.dddf1719.js"><link rel="prefetch" href="/assets/js/57.d770a29a.js"><link rel="prefetch" href="/assets/js/58.1858662a.js"><link rel="prefetch" href="/assets/js/59.5706d886.js"><link rel="prefetch" href="/assets/js/6.382112b0.js"><link rel="prefetch" href="/assets/js/60.ea659059.js"><link rel="prefetch" href="/assets/js/7.a0feba21.js"><link rel="prefetch" href="/assets/js/8.4ac9dba2.js"><link rel="prefetch" href="/assets/js/9.1af4d098.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.82bea2fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">烈虎</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://segmentfault.com/u/peichenhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的思否
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/Guide.html" class="nav-link">日积月累</a></div><div class="nav-item"><a href="https://github.com/pch1024" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://segmentfault.com/u/peichenhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的思否
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/Guide.html" class="nav-link">日积月累</a></div><div class="nav-item"><a href="https://github.com/pch1024" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Guide.html" class="sidebar-link">Hello World</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>开源项目</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/开源项目/dom-to-pdf.html" class="sidebar-link">HTML 导出 PDF</a></li><li><a href="/开源项目/echarts-in-react.html" class="active sidebar-link">一个用于 React 项目的 Echarts 组件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/开源项目/echarts-in-react.html#组件的功能" class="sidebar-link">组件的功能</a></li></ul></li><li><a href="/开源项目/fix-image-orientation.html" class="sidebar-link">数码照片方向参数修正</a></li><li><a href="/开源项目/tinypng-for-node.html" class="sidebar-link">自动化批处理压缩图片</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>原创文章</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法研究</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/个人简历.html" class="sidebar-link">个人简历</a></li><li><a href="/项目案例/项目案例.html" class="sidebar-link">项目案例</a></li><li><a href="/Optimization.html" class="sidebar-link">网站优化</a></li><li><a href="/WXAPP.html" class="sidebar-link">微信小程序</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="一个用于-react-项目的-echarts-组件"><a href="#一个用于-react-项目的-echarts-组件" aria-hidden="true" class="header-anchor">#</a> 一个用于 React 项目的 Echarts 组件</h1> <blockquote><p>简单介绍，使用 React-Hooks、PropTypes、TypeScript、Echarts 定制的个人用途的小组件</p></blockquote> <h2 id="组件的功能"><a href="#组件的功能" aria-hidden="true" class="header-anchor">#</a> 组件的功能</h2> <ul><li>支持 Echarts-Option 动态渲染</li> <li>支持 返回 Echarts 初始化完成的实例对象，以便添加更多功能，例如加动画。</li> <li>支持 DOM 动态宽度变化 Echarts 图表自适应重绘</li> <li>支持 图表加载状态（暂无数据状态用户可以操作 option 来展示）</li> <li>支持 定时器、监听器等组件销毁注册机制</li> <li>代码简洁，可以依据不同情况自行定制</li></ul> <div class="language-jsx harmony extra-class"><pre class="language-jsx"><code><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> React <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> useRef<span class="token punctuation">,</span> createElement<span class="token punctuation">,</span> ReactElement<span class="token punctuation">,</span> useMemo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&quot;react&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> PropTypes <span class="token keyword">from</span> <span class="token string">&quot;prop-types&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> echarts <span class="token keyword">from</span> <span class="token string">&quot;echarts&quot;</span><span class="token punctuation">;</span>
+
+type <span class="token function-variable function">Callback</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> Chart <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token parameter">ReactElement</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// 挂载节点</span>
+    <span class="token keyword">const</span> chartDom <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 生命钩子函数</span>
+    React<span class="token punctuation">.</span><span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token parameter">Callback</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 加载状态</span>
+        <span class="token keyword">function</span> <span class="token function">showLoading</span><span class="token punctuation">(</span><span class="token parameter">instance</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token punctuation">{</span>
+            instance<span class="token punctuation">.</span><span class="token function">showLoading</span><span class="token punctuation">(</span><span class="token string">&quot;default&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+                text<span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+                color<span class="token punctuation">:</span> <span class="token string">&quot;#c23531&quot;</span><span class="token punctuation">,</span>
+                textColor<span class="token punctuation">:</span> <span class="token string">&quot;#000000&quot;</span><span class="token punctuation">,</span>
+                maskColor<span class="token punctuation">:</span> <span class="token string">&quot;rgba(255, 255, 255, 0.8)&quot;</span><span class="token punctuation">,</span>
+                zlevel<span class="token punctuation">:</span> <span class="token number">0</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 获取实例对象</span>
+        <span class="token keyword">let</span> instance <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">getInstanceByDom</span><span class="token punctuation">(</span>chartDom<span class="token punctuation">.</span>current<span class="token punctuation">)</span> <span class="token operator">||</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>chartDom<span class="token punctuation">.</span>current<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 大小自适应</span>
+        <span class="token keyword">const</span> resize <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token parameter"><span class="token keyword">void</span></span> <span class="token operator">=&gt;</span> instance<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;resize&quot;</span><span class="token punctuation">,</span> resize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;resize&quot;</span><span class="token punctuation">,</span> resize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 默认加载状态</span>
+        <span class="token function">showLoading</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 渲染图表</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span>option<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>instance<span class="token punctuation">)</span> instance<span class="token punctuation">.</span><span class="token function">hideLoading</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            instance<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>props<span class="token punctuation">.</span>option<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 回调函数返回实例</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>props<span class="token punctuation">.</span>onRender<span class="token punctuation">)</span> props<span class="token punctuation">.</span><span class="token function">onRender</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment">// 销毁并清除状态</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token parameter"><span class="token keyword">void</span></span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            echarts<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span>instance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            window<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;resize&quot;</span><span class="token punctuation">,</span> resize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>chartDom<span class="token punctuation">,</span> props<span class="token punctuation">,</span> props<span class="token punctuation">.</span>option<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 返回组件</span>
+    <span class="token keyword">return</span> <span class="token function">useMemo</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token parameter">ReactElement</span> <span class="token operator">=&gt;</span>
+        <span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">&quot;div&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            ref<span class="token punctuation">:</span> chartDom<span class="token punctuation">,</span>
+            style<span class="token punctuation">:</span> props<span class="token punctuation">.</span>style<span class="token punctuation">,</span>
+            className<span class="token punctuation">:</span> props<span class="token punctuation">.</span>className
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> props<span class="token punctuation">.</span>style<span class="token punctuation">,</span> props<span class="token punctuation">.</span>className <span class="token punctuation">]</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Chart<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 图表数据</span>
+    option<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>object<span class="token punctuation">,</span>
+    <span class="token comment">// 图表宽高</span>
+    style<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span><span class="token function">shape</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token comment">//图表宽度</span>
+        width<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+        <span class="token comment">//图表高度</span>
+        height<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">.</span>isRequired
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
+    <span class="token comment">//图表CSS样式类名称</span>
+    className<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>string<span class="token punctuation">,</span>
+    <span class="token comment">//图表回调函数返回图表实例</span>
+    onRender<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>func
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// 导出组件模块</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> Chart<span class="token punctuation">;</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/开源项目/dom-to-pdf.html" class="prev">HTML 导出 PDF</a></span> <span class="next"><a href="/开源项目/fix-image-orientation.html">数码照片方向参数修正</a>→
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8d5fe67d.js" defer></script><script src="/assets/js/2.fa29e96b.js" defer></script><script src="/assets/js/36.b0b42ee8.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>学习笔记-阿里云ECS容器服务配置 | 烈虎</title>
+    <meta name="description" content="自信，坚持，求真">
+    <link rel="icon" href="/assets/img/favicon.ico">
+  <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?11ee3eaf406620d405bb85e0f32425c7";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <link rel="preload" href="/assets/css/0.styles.82bea2fa.css" as="style"><link rel="preload" href="/assets/js/app.8d5fe67d.js" as="script"><link rel="preload" href="/assets/js/2.fa29e96b.js" as="script"><link rel="preload" href="/assets/js/34.f77b6d52.js" as="script"><link rel="prefetch" href="/assets/js/10.3f5193d4.js"><link rel="prefetch" href="/assets/js/11.d37f35cb.js"><link rel="prefetch" href="/assets/js/12.7a21fa47.js"><link rel="prefetch" href="/assets/js/13.fb4f3c39.js"><link rel="prefetch" href="/assets/js/14.dc586c5a.js"><link rel="prefetch" href="/assets/js/15.d2857a72.js"><link rel="prefetch" href="/assets/js/16.c8b0e7e1.js"><link rel="prefetch" href="/assets/js/17.49796df2.js"><link rel="prefetch" href="/assets/js/18.57461098.js"><link rel="prefetch" href="/assets/js/19.93b5cb6e.js"><link rel="prefetch" href="/assets/js/20.345f3e56.js"><link rel="prefetch" href="/assets/js/21.92acd393.js"><link rel="prefetch" href="/assets/js/22.448078ce.js"><link rel="prefetch" href="/assets/js/23.5e57af3f.js"><link rel="prefetch" href="/assets/js/24.e93af5c9.js"><link rel="prefetch" href="/assets/js/25.e1e8b241.js"><link rel="prefetch" href="/assets/js/26.c63d5a00.js"><link rel="prefetch" href="/assets/js/27.dff7a2b5.js"><link rel="prefetch" href="/assets/js/28.ac36eaf8.js"><link rel="prefetch" href="/assets/js/29.0aaa35f6.js"><link rel="prefetch" href="/assets/js/3.77c1e61e.js"><link rel="prefetch" href="/assets/js/30.90c3e858.js"><link rel="prefetch" href="/assets/js/31.bd15adb1.js"><link rel="prefetch" href="/assets/js/32.58cd3c0d.js"><link rel="prefetch" href="/assets/js/33.62a454f2.js"><link rel="prefetch" href="/assets/js/35.57cc5706.js"><link rel="prefetch" href="/assets/js/36.b0b42ee8.js"><link rel="prefetch" href="/assets/js/37.02424497.js"><link rel="prefetch" href="/assets/js/38.7462c38d.js"><link rel="prefetch" href="/assets/js/39.682c7d42.js"><link rel="prefetch" href="/assets/js/4.35918f97.js"><link rel="prefetch" href="/assets/js/40.d8d0ed41.js"><link rel="prefetch" href="/assets/js/41.c53fd9b3.js"><link rel="prefetch" href="/assets/js/42.9cb632e9.js"><link rel="prefetch" href="/assets/js/43.f864c2f0.js"><link rel="prefetch" href="/assets/js/44.3e007571.js"><link rel="prefetch" href="/assets/js/45.7a30699a.js"><link rel="prefetch" href="/assets/js/46.d0d3be1d.js"><link rel="prefetch" href="/assets/js/47.97f6235b.js"><link rel="prefetch" href="/assets/js/48.644929be.js"><link rel="prefetch" href="/assets/js/49.bfbbce0b.js"><link rel="prefetch" href="/assets/js/5.7c7b758c.js"><link rel="prefetch" href="/assets/js/50.092d2a3c.js"><link rel="prefetch" href="/assets/js/51.10f85bec.js"><link rel="prefetch" href="/assets/js/52.a5e5d498.js"><link rel="prefetch" href="/assets/js/53.f6b4c9c8.js"><link rel="prefetch" href="/assets/js/54.c2f4ade9.js"><link rel="prefetch" href="/assets/js/55.5b4cc45a.js"><link rel="prefetch" href="/assets/js/56.dddf1719.js"><link rel="prefetch" href="/assets/js/57.d770a29a.js"><link rel="prefetch" href="/assets/js/58.1858662a.js"><link rel="prefetch" href="/assets/js/59.5706d886.js"><link rel="prefetch" href="/assets/js/6.382112b0.js"><link rel="prefetch" href="/assets/js/60.ea659059.js"><link rel="prefetch" href="/assets/js/7.a0feba21.js"><link rel="prefetch" href="/assets/js/8.4ac9dba2.js"><link rel="prefetch" href="/assets/js/9.1af4d098.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.82bea2fa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">烈虎</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://segmentfault.com/u/peichenhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的思否
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/Guide.html" class="nav-link">日积月累</a></div><div class="nav-item"><a href="https://github.com/pch1024" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://segmentfault.com/u/peichenhu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  我的思否
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="/Guide.html" class="nav-link">日积月累</a></div><div class="nav-item"><a href="https://github.com/pch1024" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/Guide.html" class="sidebar-link">Hello World</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>代码片段</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开源项目</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>原创文章</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/原创文章/JS-new操作构造函数深度解析.html" class="sidebar-link">JS-new操作构造函数深度解析</a></li><li><a href="/原创文章/JS-this.html" class="sidebar-link">JS-this、call、apply和bind</a></li><li><a href="/原创文章/JS-闭包.html" class="sidebar-link">JS-闭包</a></li><li><a href="/原创文章/JS-数码照片旋转角度修复.html" class="sidebar-link">JS-数码照片旋转角度修复</a></li><li><a href="/原创文章/JS-HTMLToPDF.html" class="sidebar-link">JS-HTMLToPDF</a></li><li><a href="/原创文章/JS-费波纳茨数列.html" class="sidebar-link">JS-费波纳茨数列</a></li><li><a href="/原创文章/JS-有趣的数组.html" class="sidebar-link">JS-有趣的数组</a></li><li><a href="/原创文章/Vue-路由History模式配置.html" class="sidebar-link">Vue-路由History模式配置</a></li><li><a href="/原创文章/学习笔记-ES6.html" class="sidebar-link">学习笔记-ES6</a></li><li><a href="/原创文章/学习笔记-阿里云ECS容器服务配置.html" class="active sidebar-link">学习笔记-阿里云ECS容器服务配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/原创文章/学习笔记-阿里云ECS容器服务配置.html#我要做甚么？" class="sidebar-link">我要做甚么？</a></li><li class="sidebar-sub-header"><a href="/原创文章/学习笔记-阿里云ECS容器服务配置.html#开始学习" class="sidebar-link">开始学习</a></li><li class="sidebar-sub-header"><a href="/原创文章/学习笔记-阿里云ECS容器服务配置.html#安装-nginx" class="sidebar-link">安装 Nginx</a></li><li class="sidebar-sub-header"><a href="/原创文章/学习笔记-阿里云ECS容器服务配置.html#上传发布" class="sidebar-link">上传发布</a></li><li class="sidebar-sub-header"><a href="/原创文章/学习笔记-阿里云ECS容器服务配置.html#导出备份" class="sidebar-link">导出备份</a></li><li class="sidebar-sub-header"><a href="/原创文章/学习笔记-阿里云ECS容器服务配置.html#进阶" class="sidebar-link">进阶</a></li></ul></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>面试题</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>设计模式</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>算法研究</span> <span class="arrow right"></span></p> <!----></section></li><li><a href="/个人简历.html" class="sidebar-link">个人简历</a></li><li><a href="/项目案例/项目案例.html" class="sidebar-link">项目案例</a></li><li><a href="/Optimization.html" class="sidebar-link">网站优化</a></li><li><a href="/WXAPP.html" class="sidebar-link">微信小程序</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="学习笔记-阿里云ecs容器服务配置"><a href="#学习笔记-阿里云ecs容器服务配置" aria-hidden="true" class="header-anchor">#</a> 学习笔记-阿里云ECS容器服务配置</h1> <blockquote><p>LNMN 环境代表 Linux 系统下 Nginx + MySQL + Nodejs 网站服务器架构。本文档介绍 CentOS 下的 LNMN 环境搭建。</p> <p>Docker是一个开源的引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。开发者在笔记本上编译测试通过的容器可以批量地在生产环境中部署，包括VMs（虚拟机）、 bare metal、OpenStack 集群和其他的基础应用平台。</p></blockquote> <p>Docker通常用于如下场景：</p> <ul><li>web 应用的自动化打包和发布；</li> <li>自动化测试和持续集成、发布；</li> <li>在服务型环境中部署和调整数据库或其他的后台应用；</li> <li>从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的PaaS环境。</li></ul> <h2 id="我要做甚么？"><a href="#我要做甚么？" aria-hidden="true" class="header-anchor">#</a> 我要做甚么？</h2> <p>我自己用 centos 配置了自己的网站，但是考虑到以后可能要换服务器，不想再配置一次，节省劳动力，所以想把服务器配置搬到Docker，一劳永逸。
+docker_centos 主要是网站配置和网站数据访问，之后的服务器登录依然先登录服务器再登录docker_centos</p> <h2 id="开始学习"><a href="#开始学习" aria-hidden="true" class="header-anchor">#</a> 开始学习</h2> <blockquote><p>Docker 命令大全</p> <blockquote><p>http://www.runoob.com/docker/docker-command-manual.html</p></blockquote></blockquote> <ol><li>安装 windows 10 docker</li></ol> <p>先把系统升级到专业版，再从官网注册并下载docker for Windows 10</p> <ol start="2"><li>确定centos为服务器版本，那就开始：</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># CMD 检查安装</span>
+docker version  
+
+<span class="token comment"># 搜索 centos 公共镜像</span>
+docker search centos
+
+<span class="token comment"># 下载</span>
+docker pull centos
+
+<span class="token comment"># 查看下载</span>
+docker image <span class="token function">ls</span> -a
+
+<span class="token comment"># 删除 image</span>
+docker rmi centos
+
+<span class="token comment"># 容器操作</span>
+docker run <span class="token operator">&lt;</span>image name<span class="token operator">&gt;</span>
+docker stop <span class="token operator">&lt;</span>container name<span class="token operator">&gt;</span>
+docker start <span class="token operator">&lt;</span>container name<span class="token operator">&gt;</span>
+docker restart <span class="token operator">&lt;</span>container name<span class="token operator">&gt;</span>
+docker <span class="token function">kill</span> <span class="token operator">&lt;</span>container name<span class="token operator">&gt;</span>
+
+<span class="token comment"># shell 交互模式运行 centos image 作为容器</span>
+docker run --privileged --cap-add SYS_ADMIN -e <span class="token assign-left variable">container</span><span class="token operator">=</span>docker -it --name my_centos -p <span class="token number">80</span>:80 -p <span class="token number">3306</span>:3306 -d  --restart<span class="token operator">=</span>always centos /usr/sbin/init
+<span class="token comment"># 这个命令用来建立一个CENTOS的容器。把80端口映射到容器的8080端口。</span>
+<span class="token comment"># --privileged 指定容器是否是特权容器。这里开启特权模式。</span>
+<span class="token comment"># --cap-add SYS_ADMIN 添加系统的权限。不然，系统很多功能都用不了的。</span>
+<span class="token comment"># -e container=docker 设置容器的类型。</span>
+<span class="token comment"># -it 启动互动模式。</span>
+<span class="token comment"># /usr/sbin/init  初始容器里的CENTOS。</span>
+<span class="token comment"># 以上的参数是必需的。不然，建立的CENTOS容器不能正常使用和互动。</span>
+<span class="token comment"># 如果没有-it参数，容器会不停启动。</span>
+<span class="token comment"># 如果没有初始化和特权等等的开关，就不能使用systemctl。所以，以上的开关和设置是一样不能少的。</span>
+
+<span class="token comment"># 进入容器</span>
+docker <span class="token builtin class-name">exec</span> -it my_centos /bin/bash
+
+
+<span class="token comment"># 交互模式下查看centos 版本</span>
+<span class="token function">cat</span> /etc/redhat-release
+
+<span class="token comment"># 安装网络工具（可选）</span>
+yum <span class="token function">install</span> net-tools
+
+<span class="token comment"># 至此centos 镜像以作为容器运行，然后就是常规操作配置centos</span>
+</code></pre></div><p><b>划重点：从这里开始，如果中途退出并kill rm 容器，容器将变回初始状态</b></p> <ol start="3"><li>centos 安装 node</li></ol> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 安装 nodejs</span>
+<span class="token function">curl</span> --silent --location https://rpm.nodesource.com/setup_8.x <span class="token operator">|</span> <span class="token function">bash</span> -
+yum <span class="token function">install</span> -y nodejs
+node -v
+<span class="token function">npm</span> -v
+</code></pre></div><ol start="4"><li>centos 安装 mariadb</li></ol> <div class="language- extra-class"><pre class="language-text"><code># 卸载
+yum remove mariadb
+rm -rf /var/lib/mysql/
+rm -rf /etc/my.cnf
+
+# 搜索 MariaDB 现有的包
+rpm -qa | grep MariaDB
+# 如果存在（删不了的话，就一个一个删），全部删除
+rpm -e --nodeps MariaDB-\*
+
+# 开始新的安装, 创建 MariaDB.repo 文件
+
+vim /etc/yum.repos.d/mariadb.repo
+
+mariadb]
+name = mariadb
+baseurl = http://yum.mariadb.org/10.4/centos7-amd64
+gpgkey = https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck = 1
+
+# 安装 MariaDB
+yum install -y MariaDB-server MariaDB-client
+
+
+# 启动 MariaDB 服务，并设为开机自启
+systemctl start mariadb #启动服务
+systemctl enable mariadb #设置开机启动
+systemctl restart mariadb #重新启动
+systemctl stop mariadb.service #停止 MariaDB
+
+# 登录到数据库用,此时 root 账户的密码为空，直接回车即可，退出 Mariadb，exit；即可
+mysql -uroot -p
+
+# 进行 MariaDB 的相关简单配置(可选)
+mysql_secure_installation
+
+    首先是设置密码，会提示先输入密码
+    Enter current password for root (enter for none):&lt;–初次运行直接回车
+    设置密码
+    Set root password? [Y/n] &lt;– 是否设置root用户密码，输入y并回车或直接回车
+    New password: &lt;– 设置root用户的密码
+    Re-enter new password: &lt;– 再输入一次你设置的密码
+    其他配置
+    Remove anonymous users? [Y/n] &lt;– 是否删除匿名用户，回车
+    Disallow root login remotely? [Y/n] &lt;–是否禁止root远程登录,回车（后面授权配置）
+    Remove test database and access to it? [Y/n] &lt;– 是否删除test数据库，回车
+    Reload privilege tables now? [Y/n] &lt;– 是否重新加载权限表，回车
+
+# 修改默认密码(可选)
+use mysql;
+update user set password=PASSWORD(&quot;你的密码&quot;) where user='root';
+
+# 授予外网登录和所有操作权限 %
+grant all privileges on *.* to root@'%' identified by '你的密码';
+
+# 刷新权限
+flush privileges; 
+
+# 删除用户
+drop user zhangsan@'%';
+
+</code></pre></div><h2 id="安装-nginx"><a href="#安装-nginx" aria-hidden="true" class="header-anchor">#</a> 安装 Nginx</h2> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">rpm</span> -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+yum <span class="token function">install</span> -y nginx
+systemctl start nginx.service
+systemctl <span class="token builtin class-name">enable</span> nginx.service
+yum info nginx
+
+<span class="token comment">## 查看容器IP地址</span>
+docker inspect <span class="token operator">&lt;</span>name/id<span class="token operator">&gt;</span>
+</code></pre></div><h2 id="上传发布"><a href="#上传发布" aria-hidden="true" class="header-anchor">#</a> 上传发布</h2> <div class="language- extra-class"><pre class="language-text"><code>docker push 注册用户名/镜像名
+
+## 修改本地镜像名
+docker tag lnmn pch1024/lnmn 
+docker push pch1024/lnmn:latest
+
+
+</code></pre></div><h2 id="导出备份"><a href="#导出备份" aria-hidden="true" class="header-anchor">#</a> 导出备份</h2> <div class="language- extra-class"><pre class="language-text"><code># docker export [OPTIONS] CONTAINER
+docker export --output=&quot;pch1024/lnmn.tar&quot; my_lnmn
+
+</code></pre></div><h2 id="进阶"><a href="#进阶" aria-hidden="true" class="header-anchor">#</a> 进阶</h2> <p>进一步优化镜像文件的大小需要 自己手写 dockerfile ，未完待续</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/原创文章/学习笔记-ES6.html" class="prev">学习笔记-ES6</a></span> <span class="next"><a href="/面试题/前端高频面试题.html">前端高频面试题</a>→
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.8d5fe67d.js" defer></script><script src="/assets/js/2.fa29e96b.js" defer></script><script src="/assets/js/34.f77b6d52.js" defer></script>
+  </body>
+</html>
